@@ -27,7 +27,7 @@ const CampaignForm4 = () => {
     }
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/submit", {
+      const res = await fetch("https://gwm-campaign-backend.onrender.com/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, campaignId: campaign.id })
