@@ -8,7 +8,7 @@ const LeadList = ({ campaignId }) => {
   useEffect(() => {
     const fetchLeads = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/leads/${campaignId}`);
+        const res = await fetch(`https://gwm-campaign-backend.onrender.com/api/leads/${campaignId}`);
         const data = await res.json();
         if (res.ok) {
           setLeads(data);
