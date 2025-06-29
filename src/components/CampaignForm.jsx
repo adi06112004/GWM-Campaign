@@ -9,8 +9,9 @@ const CampaignForm = () => {
     redirectUrl: "https://paytmmoney.page.link/2cg39g3HY8fSLQ6x5",
     steps: [
       "Enter your Name, Mobile Number & UPI ID and submit",
-      "If tracking success then open account using Aadhaar & PAN",
-      "Get ₹200 instantly in your bank account 🎉"
+      "then open account using Aadhaar & PAN",
+      "Wait for Approval",
+      "Get instantly ₹150 in your Bank Account 🎉"
     ]
   };
 
@@ -81,6 +82,10 @@ const CampaignForm = () => {
 
         <h2 className="text-center text-xl sm:text-2xl font-extrabold mb-1 text-yellow-400">{campaign.name}</h2>
         <p className="text-center text-4xl sm:text-5xl font-black mb-4 text-pink-500 drop-shadow-lg">Get {campaign.reward}</p>
+        <p className="text-yellow-400 text-xs italic">
+  ⚠️ Try only if not done before to ensure tracking or for payment.
+</p>
+
         <p className="text-center text-sm mb-6 italic text-gray-300">Claim your bonus in 3 simple steps!</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
