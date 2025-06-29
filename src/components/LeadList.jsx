@@ -13,10 +13,10 @@ const LeadList = ({ campaignId }) => {
         if (res.ok) {
           setLeads(data);
         } else {
-          setError(data.error || "Failed to fetch leads");
+          setError(data.error || "❌ Failed to fetch leads");
         }
-      } catch (err) {
-        setError("Server error");
+      } catch {
+        setError("❌ Server error");
       }
       setLoading(false);
     };
@@ -24,38 +24,54 @@ const LeadList = ({ campaignId }) => {
     fetchLeads();
   }, [campaignId]);
 
-  if (loading) return <p className="text-white">Loading leads...</p>;
-  if (error) return <p className="text-red-400">{error}</p>;
+  if (loading) {
+    return (
+      <div className="h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-black to-gray-900">
+        <p className="text-yellow-400 text-lg animate-pulse">Loading leads...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-black to-gray-900">
+        <p className="text-red-400 text-lg">{error}</p>
+      </div>
+    );
+  }
 
   return (
-    <div className="h-screen bg-gradient-to-b from-gray-800 via-gray-900 to-gray-800">
-    <div className="p-4 bg-gray-900 text-white">
-      <h2 className="text-xl font-bold mb-3">Leads for Campaign: {campaignId}</h2>
-      {leads.length === 0 ? (
-        <p>No leads found for this campaign.</p>
-      ) : (
-        <table className="w-full text-sm text-left">
-          <thead>
-            <tr className="border-b border-gray-600">
-              <th className="py-1">Name</th>
-              <th className="py-1">Mobile</th>
-              <th className="py-1">UPI</th>
-              <th className="py-1">Submitted At</th>
-            </tr>
-          </thead>
-          <tbody>
-            {leads.map((lead) => (
-              <tr key={lead._id} className="border-b border-gray-700 hover:bg-gray-800">
-                <td className="py-1">{lead.name}</td>
-                <td className="py-1">{lead.mobile}</td>
-                <td className="py-1">{lead.upi}</td>
-                <td className="py-1">{new Date(lead.createdAt).toLocaleString()}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900 p-6">
+      <div className="max-w-4xl mx-auto bg-gray-800/70 border border-gray-700 rounded-2xl shadow-2xl p-5 backdrop-blur">
+        <h2 className="text-2xl font-black text-yellow-400 text-center mb-4 drop-shadow">📋 Leads for: {campaignId}</h2>
+
+        {leads.length === 0 ? (
+          <p className="text-center text-gray-400">No leads found for this campaign.</p>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm text-left border-collapse">
+              <thead className="bg-gradient-to-r from-yellow-500 via-orange-500 to-pink-500 text-black">
+                <tr>
+                  <th className="py-2 px-3">👤 Name</th>
+                  <th className="py-2 px-3">📞 Mobile</th>
+                  <th className="py-2 px-3">💳 UPI</th>
+                  <th className="py-2 px-3">⏰ Submitted At</th>
+                </tr>
+              </thead>
+              <tbody>
+                {leads.map((lead) => (
+                  <tr key={lead._id} className="border-b text-white border-gray-700 hover:bg-gray-700/50 transition">
+                    <td className="py-2 px-3">{lead.name}</td>
+                    <td className="py-2 px-3">{lead.mobile}</td>
+                    <td className="py-2 px-3">{lead.upi}</td>
+                    <td className="py-2 px-3">{new Date(lead.createdAt).toLocaleString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
