@@ -3,10 +3,10 @@ import React, { useState } from "react";
 const CampaignForm = () => {
   const campaign = {
     id: "campaign1",
-    name: "Upstox ₹200 Offer",
-    reward: "₹200",
+    name: "PAYTM MONEY",
+    reward: "₹150",
     offerText: "🔥 LIMITED TIME BONUS!",
-    redirectUrl: "https://your-affiliate-link.com",
+    redirectUrl: "https://paytmmoney.page.link/2cg39g3HY8fSLQ6x5",
     steps: [
       "Enter your Name, Mobile Number & UPI ID and submit",
       "If tracking success then open account using Aadhaar & PAN",
