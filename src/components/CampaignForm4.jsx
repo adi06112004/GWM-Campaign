@@ -33,6 +33,7 @@ const CampaignForm4 = () => {
         body: JSON.stringify({ ...formData, campaignId: campaign.id })
       });
       const data = await res.json();
+      await new Promise(resolve => setTimeout(resolve, 5000));
       if (res.ok || data.alreadyExists) {
         window.open(campaign.redirectUrl, "_blank");
       } else {
