@@ -6,23 +6,41 @@ const LeadList = ({ campaignId }) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fetchLeads = async () => {
-      try {
-        const res = await fetch(`https://gwm-campaign-backend.onrender.com/api/leads/${campaignId}`);
-        const data = await res.json();
-        if (res.ok) {
-          setLeads(data);
-        } else {
-          setError(data.error || "❌ Failed to fetch leads");
-        }
-      } catch {
-        setError("❌ Server error");
-      }
-      setLoading(false);
-    };
-
     fetchLeads();
   }, [campaignId]);
+
+  const fetchLeads = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(`http://localhost:5000/api/leads/${campaignId}`);
+      const data = await res.json();
+      if (res.ok) {
+        setLeads(data);
+      } else {
+        setError(data.error || "❌ Failed to fetch leads");
+      }
+    } catch {
+      setError("❌ Server error");
+    }
+    setLoading(false);
+  };
+
+  const handleDelete = async (leadId) => {
+    if (!window.confirm("Are you sure you want to delete this lead?")) return;
+
+    try {
+      const res = await fetch(`https://gwm-campaign-backend.onrender.com/api/leads/delete/${leadId}`, {
+        method: "DELETE",
+      });
+      if (res.ok) {
+        setLeads(leads.filter((lead) => lead._id !== leadId));
+      } else {
+        alert("Failed to delete lead");
+      }
+    } catch {
+      alert("Server error while deleting");
+    }
+  };
 
   if (loading) {
     return (
@@ -56,6 +74,7 @@ const LeadList = ({ campaignId }) => {
                   <th className="py-2 px-3">📞 Mobile</th>
                   <th className="py-2 px-3">💳 UPI</th>
                   <th className="py-2 px-3">⏰ Submitted At</th>
+                  <th className="py-2 px-3">❌ Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -65,6 +84,15 @@ const LeadList = ({ campaignId }) => {
                     <td className="py-2 px-3">{lead.mobile}</td>
                     <td className="py-2 px-3">{lead.upi}</td>
                     <td className="py-2 px-3">{new Date(lead.createdAt).toLocaleString()}</td>
+                    <td className="py-2 px-3">
+                  <button
+    onClick={() => handleDelete(lead._id)}
+    className="bg-gradient-to-r from-red-600 hover:cursor-pointer to-red-500 hover:from-red-700 hover:to-red-600 active:scale-95 transition-transform duration-150 text-white rounded px-2 py-1 text-xs font-bold shadow-md"
+  >
+    ❌ Delete
+        </button>
+              </td>
+
                   </tr>
                 ))}
               </tbody>
