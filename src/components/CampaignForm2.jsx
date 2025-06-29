@@ -3,14 +3,14 @@ import React, { useState } from "react";
 const CampaignForm2 = () => {
   const campaign = {
     id: "campaign2",
-    name: "Motilal ₹250 Offer",
-    reward: "₹250",
+    name: "PAYTM MONEY",
+    reward: "₹150",
     offerText: "⚡ EXCLUSIVE BONUS!",
-    redirectUrl: "https://motilal-affiliate.com",
+    redirectUrl: "https://paytmmoney.page.link/as7s4Nq1xwwKWJF87",
     steps: [
       "Fill Name, Mobile, UPI and submit",
-      "Install Motilal app and register with Aadhaar + PAN",
-      "₹250 credited on account approval 🎉"
+      "Install PAYTM MONEY app and register with Aadhaar + PAN",
+      "₹150 credited on account approval 🎉"
     ]
   };
 
