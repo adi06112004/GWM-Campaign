@@ -4,14 +4,14 @@ const CampaignForm = () => {
   const campaign = {
     id: "campaign1",
     name: "PAYTM MONEY",
-    reward: "₹150",
+    reward: "₹120",
     offerText: "🔥 LIMITED TIME BONUS!",
     redirectUrl: "https://paytmmoney.page.link/D9YsbxbZFUgzRauFA",
     steps: [
       "Enter your Name, Mobile Number & UPI ID and submit",
       "then open account using Aadhaar & PAN",
       "Wait for Approval",
-      "Get instantly ₹150 in your Bank Account 🎉"
+      "Get instantly ₹120 in your Bank Account 🎉"
     ]
   };
 
