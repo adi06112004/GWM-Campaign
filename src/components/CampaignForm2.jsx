@@ -43,7 +43,7 @@ const CampaignForm2 = () => {
 
 
       if (res.ok || data.alreadyExists) {
-        window.open(campaign.redirectUrl);
+      window.location.href = campaign.redirectUrl;
       } else {
         alert(data.error || "Submission failed");
       }
