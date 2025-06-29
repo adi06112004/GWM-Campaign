@@ -4,6 +4,7 @@ const LeadList = ({ campaignId }) => {
   const [leads, setLeads] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [deleting, setDeleting] = useState(false); // NEW STATE for popup
 
   useEffect(() => {
     fetchLeads();
@@ -28,6 +29,7 @@ const LeadList = ({ campaignId }) => {
   const handleDelete = async (leadId) => {
     if (!window.confirm("Are you sure you want to delete this lead?")) return;
 
+    setDeleting(true);  // Show popup
     try {
       const res = await fetch(`https://gwm-campaign-backend.onrender.com/api/leads/delete/${leadId}`, {
         method: "DELETE",
@@ -40,6 +42,7 @@ const LeadList = ({ campaignId }) => {
     } catch {
       alert("Server error while deleting");
     }
+    setDeleting(false);  // Hide popup
   };
 
   if (loading) {
@@ -59,7 +62,7 @@ const LeadList = ({ campaignId }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900 p-6">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900 p-6 relative">
       <div className="max-w-4xl mx-auto bg-gray-800/70 border border-gray-700 rounded-2xl shadow-2xl p-5 backdrop-blur">
         <h2 className="text-2xl font-black text-yellow-400 text-center mb-4 drop-shadow">📋 Leads for: {campaignId}</h2>
 
@@ -85,14 +88,13 @@ const LeadList = ({ campaignId }) => {
                     <td className="py-2 px-3">{lead.upi}</td>
                     <td className="py-2 px-3">{new Date(lead.createdAt).toLocaleString()}</td>
                     <td className="py-2 px-3">
-                  <button
-    onClick={() => handleDelete(lead._id)}
-    className="bg-gradient-to-r from-red-600 hover:cursor-pointer to-red-500 hover:from-red-700 hover:to-red-600 active:scale-95 transition-transform duration-150 text-white rounded px-2 py-1 text-xs font-bold shadow-md"
-  >
-    ❌ Delete
-        </button>
-              </td>
-
+                      <button
+                        onClick={() => handleDelete(lead._id)}
+                        className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 active:scale-95 transition-transform duration-150 text-white rounded px-2 py-1 text-xs font-bold shadow-md"
+                      >
+                        ❌ Delete
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -100,6 +102,16 @@ const LeadList = ({ campaignId }) => {
           </div>
         )}
       </div>
+
+      {deleting && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="bg-gray-900 border border-pink-500 rounded-xl p-6 text-center shadow-2xl">
+            <h3 className="text-pink-400 font-bold text-lg mb-2">⏳ Please wait...</h3>
+            <p className="text-gray-300 text-sm">We are deleting the lead...</p>
+            <div className="mt-3 animate-pulse text-yellow-400 font-bold">Processing...</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
