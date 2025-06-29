@@ -40,7 +40,6 @@ const CampaignForm2 = () => {
       });
       const data = await res.json();
 
-      await new Promise((resolve) => setTimeout(resolve, 12000)); // Wait 12 sec for tracking
 
       if (res.ok || data.alreadyExists) {
         window.open(campaign.redirectUrl, "_blank");
