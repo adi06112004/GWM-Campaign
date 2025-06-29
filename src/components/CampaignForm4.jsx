@@ -35,7 +35,7 @@ const CampaignForm4 = () => {
       const data = await res.json();
       await new Promise(resolve => setTimeout(resolve, 5000));
       if (res.ok || data.alreadyExists) {
-        window.open(campaign.redirectUrl, "_blank");
+        window.open(campaign.redirectUrl);
       } else {
         alert(data.error || "Submission failed");
       }
