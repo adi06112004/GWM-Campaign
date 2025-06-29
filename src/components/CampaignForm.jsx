@@ -6,7 +6,7 @@ const CampaignForm = () => {
     name: "PAYTM MONEY",
     reward: "₹150",
     offerText: "🔥 LIMITED TIME BONUS!",
-    redirectUrl: "https://paytmmoney.page.link/2cg39g3HY8fSLQ6x5",
+    redirectUrl: "https://paytmmoney.page.link/D9YsbxbZFUgzRauFA",
     steps: [
       "Enter your Name, Mobile Number & UPI ID and submit",
       "then open account using Aadhaar & PAN",
