@@ -54,7 +54,7 @@ const CampaignForm = () => {
       await new Promise(resolve => setTimeout(resolve, 5000));
 
       if (res.ok || data.alreadyExists) {
-        window.open(campaign.redirectUrl);
+          window.location.href = campaign.redirectUrl;
       } else {
         alert(data.error || "Submission failed");
       }
