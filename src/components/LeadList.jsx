@@ -90,7 +90,7 @@ const LeadList = ({ campaignId }) => {
                     <td className="py-2 px-3">
                       <button
                         onClick={() => handleDelete(lead._id)}
-                        className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 active:scale-95 transition-transform duration-150 text-white rounded px-2 py-1 text-xs font-bold shadow-md"
+                        className="bg-gradient-to-r hover:cursor-pointer from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 active:scale-95 transition-transform duration-150 text-white rounded px-2 py-1 text-xs font-bold shadow-md"
                       >
                         ❌ Delete
                       </button>
