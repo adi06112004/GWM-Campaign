@@ -22,6 +22,7 @@ const CampaignForm = () => {
   });
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showNote, setShowNote] = useState(true);
 
   const handleChange = (e) => {
     setFormData({
@@ -55,7 +56,7 @@ const CampaignForm = () => {
       await new Promise(resolve => setTimeout(resolve, 5000));
 
       if (res.ok || data.alreadyExists) {
-          window.location.href = campaign.redirectUrl;
+        window.location.href = campaign.redirectUrl;
       } else {
         alert(data.error || "Submission failed");
       }
@@ -81,10 +82,22 @@ const CampaignForm = () => {
         </div>
 
         <h2 className="text-center text-xl sm:text-2xl font-extrabold mb-1 text-yellow-400">{campaign.name}</h2>
-        <p className="text-center text-4xl sm:text-5xl font-black mb-4 text-pink-500 drop-shadow-lg">Get {campaign.reward}</p>
-        <p className="text-yellow-400 text-xs italic">
-  ⚠️ Try only if not done before to ensure tracking or for payment.
-</p>
+        <p className="text-center text-4xl sm:text-5xl font-black mb-2 text-pink-500 drop-shadow-lg">Get {campaign.reward}</p>
+
+        {showNote && (
+          <div className={`flex items-center justify-between bg-yellow-500/10 border border-yellow-400 text-yellow-300 text-xs rounded-lg p-2 mb-3 transition-opacity duration-500 ${showNote ? 'opacity-100' : 'opacity-0'}`}>
+            <div className="flex items-center space-x-2">
+              <span>⚠️</span>
+              <span>Try only if not done before to ensure tracking or for payment.</span>
+            </div>
+            <button
+              onClick={() => setShowNote(false)}
+              className="text-yellow-400 hover:text-yellow-300 font-bold px-1"
+            >
+              ✖
+            </button>
+          </div>
+        )}
 
         <p className="text-center text-sm mb-6 italic text-gray-300">Claim your bonus in 3 simple steps!</p>
 
