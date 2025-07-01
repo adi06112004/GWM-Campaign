@@ -72,7 +72,7 @@ const LeadList = ({ campaignId }) => {
   </h3>
   <button
     onClick={handleExportPDF}
-    className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:from-blue-600 hover:to-blue-800 border border-blue-500 text-white rounded-lg px-4 py-2 text-sm sm:text-base font-bold shadow-md transition-transform hover:scale-105 active:scale-95"
+    className="bg-gradient-to-r from-blue-500 hover:cursor-pointer via-blue-600 to-blue-700 hover:from-blue-600 hover:to-blue-800 border border-blue-500 text-white rounded-lg px-4 py-2 text-sm sm:text-base font-bold shadow-md transition-transform hover:scale-105 active:scale-95"
   >
     📄 Export as PDF
   </button>
