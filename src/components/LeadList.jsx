@@ -42,7 +42,7 @@ const LeadList = ({ campaignId }) => {
 
   const handleDelete = async (leadId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/leads/delete/${leadId}`, {
+      const res = await fetch(`https://gwm-campaign-backend.onrender.com/api/leads/delete/${leadId}`, {
         method: "DELETE",
       });
       if (res.ok) {
