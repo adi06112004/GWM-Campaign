@@ -40,6 +40,22 @@ const LeadList = ({ campaignId }) => {
     }
   };
 
+  const handleDelete = async (leadId) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/leads/delete/${leadId}`, {
+        method: "DELETE",
+      });
+      if (res.ok) {
+        fetchLeads();
+      } else {
+        alert("Failed to mark rewarded");
+      }
+    } catch {
+      alert("Server error while rewarding");
+    }
+  };
+
+
   const handleExportPDF = () => {
     window.open(`https://gwm-campaign-backend.onrender.com/api/leads/export/${campaignId}`, "_blank");
   };
@@ -88,6 +104,7 @@ const LeadList = ({ campaignId }) => {
                 <th className="py-2 px-3">💳 UPI</th>
                 <th className="py-2 px-3">⏰ Submitted At</th>
                 <th className="py-2 px-3">🏆 Reward</th>
+                <th className="py-2 px-3">❌ Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -99,7 +116,7 @@ const LeadList = ({ campaignId }) => {
                   <td className="py-2 px-3">{new Date(lead.createdAt).toLocaleString()}</td>
                   <td className="py-2 px-3">
                     {lead.rewarded ? (
-                      <span className="text-green-400 font-bold">✅ Rewarded</span>
+                      <span className="bg-gradient-to-r from-green-600 via-green-700 to-green-800 hover:from-green-700 hover:to-green-900 text-white rounded px-2 py-1 text-xs font-bold shadow-sm transition-transform hover:scale-105 active:scale-95">🎁 Rewarded</span>
                     ) : (
                       <button
                         onClick={() => handleReward(lead._id)}
@@ -109,6 +126,18 @@ const LeadList = ({ campaignId }) => {
                       </button>
                     )}
                   </td>
+                  <td className="py-2 px-3 flex flex-wrap gap-2">
+        <button
+          onClick={() => {
+            if (window.confirm(`❌ Are you sure you want to delete ${lead.name}?`)) {
+              handleDelete(lead._id);
+            }
+          }}
+          className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 hover:from-red-700 hover:to-red-900 text-white rounded px-2 py-1 text-xs font-bold shadow-sm transition-transform hover:scale-105 active:scale-95"
+        >
+          ❌ Delete
+        </button>
+      </td>
                 </tr>
               ))}
             </tbody>
