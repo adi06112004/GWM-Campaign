@@ -133,7 +133,7 @@ const LeadList = ({ campaignId }) => {
               handleDelete(lead._id);
             }
           }}
-          className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 hover:from-red-700 hover:to-red-900 text-white rounded px-2 py-1 text-xs font-bold shadow-sm transition-transform hover:scale-105 active:scale-95"
+          className="bg-gradient-to-r hover:cursor-pointer from-red-600 via-red-700 to-red-800 hover:from-red-700 hover:to-red-900 text-white rounded px-2 py-1 text-xs font-bold shadow-sm transition-transform hover:scale-105 active:scale-95"
         >
           ❌ Delete
         </button>
