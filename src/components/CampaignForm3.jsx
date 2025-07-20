@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 
 const CampaignForm3 = () => {
-  const navigate = useNavigate();
   const campaign = {
   id: "campaign3",
   name: "InCred Money ₹100 Offer",
@@ -47,7 +45,7 @@ const CampaignForm3 = () => {
       await new Promise((resolve) => setTimeout(resolve, 5000));
 
       if (res.ok || data.alreadyExists) {
-       navigate(campaign.redirectUrl); 
+       window.location.href=campaign.redirectUrl 
       } else {
         alert(data.error || "Submission failed");
       }
