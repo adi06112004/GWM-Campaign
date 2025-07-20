@@ -72,7 +72,7 @@ const CampaignForm3 = () => {
         <p className="text-center text-gray-400 text-sm mb-6">Complete in 3 easy steps</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {["name", "mobile", "upi"].map((field, idx) => (
+          {["name", "email", "upi"].map((field, idx) => (
             <div key={idx} className="flex items-center border border-gray-600 rounded-lg p-3 bg-gray-800/60 focus-within:border-cyan-400">
               <span className="mr-3 text-cyan-300 text-lg">
                 {field === "name" && "👤"}
