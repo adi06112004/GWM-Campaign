@@ -23,7 +23,7 @@ function App() {
         <Route path="/lead/campaign3" element={<LeadList campaignId="campaign3"/>} />
         <Route path="/lead/campaign4" element={<LeadList campaignId="campaign4"/>} />
         <Route path="/lead/campaign5" element={<LeadList campaignId="campaign5"/>} />
-        <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/campaign3/thankyou" element={<ThankYou />} />
       </Routes>
     </Router>
   );
