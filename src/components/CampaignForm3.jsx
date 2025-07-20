@@ -83,8 +83,8 @@ const CampaignForm3 = () => {
                 type="text"
                 name={field}
                 placeholder={
-                  field === "name" ? "Your Name" :
-                  field === "email" ? "Email" :
+                  field === "name" ? "Your Mobile No." :
+                  field === "email" ? "Registered Email" :
                   "UPI ID"
                 }
                 value={formData[field]}
