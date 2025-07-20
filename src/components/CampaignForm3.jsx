@@ -2,17 +2,19 @@ import React, { useState } from "react";
 
 const CampaignForm3 = () => {
   const campaign = {
-    id: "campaign3",
-    name: "Zerodha ₹300 Offer",
-    reward: "₹300",
-    offerText: "💎 PREMIUM REWARD!",
-    redirectUrl: "https://zerodha-affiliate.com",
-    steps: [
-      "Fill your Name, Mobile, UPI",
-      "Install Zerodha app & register",
-      "₹300 will be credited after account approval!"
-    ]
-  };
+  id: "campaign3",
+  name: "InCred Money ₹100 Offer",
+  reward: "₹100",
+  offerText: "💎 PREMIUM REWARD!",
+  redirectUrl: "./thankyou",
+  steps: [
+    "Enter the *same email* you used to register on InCred",
+    "Fill in your Mobile Number and UPI ID",
+    "We will verify your InCred registration",
+    "You'll receive ₹100 via UPI after successful verification 🎉"
+  ]
+};
+
 
   const [formData, setFormData] = useState({ name: "", mobile: "", upi: "" });
   const [loading, setLoading] = useState(false);
