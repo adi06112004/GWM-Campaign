@@ -75,7 +75,7 @@ const CampaignForm3 = () => {
           {["name", "email", "upi"].map((field, idx) => (
             <div key={idx} className="flex items-center border border-gray-600 rounded-lg p-3 bg-gray-800/60 focus-within:border-cyan-400">
               <span className="mr-3 text-cyan-300 text-lg">
-                {field === "name" && "👤"}
+                {field === "name" && "📞"}
                 {field === "email" && "📩"}
                 {field === "upi" && "💳"}
               </span>
