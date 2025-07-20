@@ -6,7 +6,7 @@ import CampaignForm2 from "./components/CampaignForm2";
 import CampaignForm3 from "./components/CampaignForm3";
 import CampaignForm4 from "./components/CampaignForm4";
 import CampaignForm5 from "./components/CampaignForm5";
-import ThankYou from "./components/ThankYou";
+import ThankYou from "./components/ThankYou.jsx";
 
 function App() {
   return (
