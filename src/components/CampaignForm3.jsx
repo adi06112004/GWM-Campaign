@@ -76,7 +76,7 @@ const CampaignForm3 = () => {
             <div key={idx} className="flex items-center border border-gray-600 rounded-lg p-3 bg-gray-800/60 focus-within:border-cyan-400">
               <span className="mr-3 text-cyan-300 text-lg">
                 {field === "name" && "👤"}
-                {field === "mobile" && "📞"}
+                {field === "email" && "📩"}
                 {field === "upi" && "💳"}
               </span>
               <input
@@ -84,7 +84,7 @@ const CampaignForm3 = () => {
                 name={field}
                 placeholder={
                   field === "name" ? "Your Name" :
-                  field === "mobile" ? "Mobile Number" :
+                  field === "email" ? "Email" :
                   "UPI ID"
                 }
                 value={formData[field]}
