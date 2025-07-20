@@ -6,7 +6,7 @@ import CampaignForm2 from "./components/CampaignForm2";
 import CampaignForm3 from "./components/CampaignForm3";
 import CampaignForm4 from "./components/CampaignForm4";
 import CampaignForm5 from "./components/CampaignForm5";
-import ThankYou from "./components/ThankYou.jsx";
+
 
 function App() {
   return (
@@ -22,7 +22,6 @@ function App() {
         <Route path="/lead/campaign3" element={<LeadList campaignId="campaign3"/>} />
         <Route path="/lead/campaign4" element={<LeadList campaignId="campaign4"/>} />
         <Route path="/lead/campaign5" element={<LeadList campaignId="campaign5"/>} />
-        <Route path="/thankyou" element={<ThankYou />} />
       </Routes>
     </Router>
   );
