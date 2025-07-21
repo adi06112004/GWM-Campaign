@@ -98,7 +98,7 @@ const LeadList = ({ campaignId }) => {
   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-400">🔍</span>
   <input
     type="text"
-    placeholder="Search by name, email or mobile"
+    placeholder="Search by name, email,Mob."
     className="w-full pl-9 pr-4 py-2 bg-black/70 text-yellow-400 placeholder-yellow-300 border border-yellow-500 rounded-lg shadow-inner shadow-yellow-500/10 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-black transition duration-200"
     value={searchTerm}
     onChange={(e) => setSearchTerm(e.target.value)}
