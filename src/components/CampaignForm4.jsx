@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const CampaignForm4 = () => {
   const campaign = {
-  const campaign = {
     id: "campaign4",
     name: "PAYTM MONEY",
     reward: "₹120",
