@@ -120,8 +120,8 @@ const LeadList = ({ campaignId }) => {
             <thead className="bg-yellow-500 text-black">
               <tr>
                 <th className="py-2 px-2">S.No.</th>
-                {/* <th className="py-2 px-3">👤 Name</th> */}
-                <th className="py-2 px-2">📧 Email</th>
+                <th className="py-2 px-3">👤 Name</th>
+{/*                 <th className="py-2 px-2">📧 Email</th> */}
                 <th className="py-2 px-2">📞 Mobile</th>
                 <th className="py-2 px-2">💳 UPI</th>
                 <th className="py-2 px-2">⏰ Submitted At</th>
