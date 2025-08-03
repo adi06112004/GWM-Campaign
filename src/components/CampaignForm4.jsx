@@ -2,15 +2,17 @@ import React, { useState } from "react";
 
 const CampaignForm4 = () => {
   const campaign = {
+  const campaign = {
     id: "campaign4",
-    name: "Paytm Money ₹100 Cashback",
-    reward: "₹100",
-    offerText: "💥 INSTANT CASHBACK",
-    redirectUrl: "https://paytm-affiliate.com",
+    name: "PAYTM MONEY",
+    reward: "₹120",
+    offerText: "🔥 LIMITED TIME BONUS!",
+    redirectUrl: "https://paytmmoney.page.link/i6V46MVBHZD9WCZD9",
     steps: [
-      "Fill your details",
-      "Download app & complete registration",
-      "₹100 cashback to your account!"
+      "Enter your Name, Mobile Number & UPI ID and submit",
+      "then open account using Aadhaar & PAN",
+      "Wait for Approval",
+      "Get ₹120 in your Bank Account within 24 hourse 🎉"
     ]
   };
 
