@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/campaign1" element={<CampaignForm />} />
+        <Route path="/" element={<CampaignForm />} />
         <Route path="/campaign2" element={<CampaignForm2 />} />
         <Route path="/campaign3" element={<CampaignForm3 />} />
         <Route path="/campaign4" element={<CampaignForm4 />} />
