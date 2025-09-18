@@ -121,7 +121,7 @@ const CampaignForm5 = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 p-3 rounded-xl font-bold shadow-lg transform hover:scale-105 hover:rotate-1 transition duration-300 relative"
+            className="w-full hover:cursor-pointer flex items-center justify-center bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 p-3 rounded-xl font-bold shadow-lg transform hover:scale-105 hover:rotate-1 transition duration-300 relative"
           >
             {loading ? (
               <span className="flex items-center gap-2">
