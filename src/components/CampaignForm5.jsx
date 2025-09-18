@@ -13,7 +13,7 @@ const CampaignForm5 = () => {
       "Do complete KYC",
       "Wait for KYC Approval",
       "After Approval you receive your amount",
-      "₹220 on successful account opening",
+      "₹200 on successful account opening",
     ],
   };
 
