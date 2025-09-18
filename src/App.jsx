@@ -7,22 +7,24 @@ import CampaignForm3 from "./components/CampaignForm3";
 import CampaignForm4 from "./components/CampaignForm4";
 import CampaignForm5 from "./components/CampaignForm5";
 import ThankYou from "./components/ThankYou";
-
+import CampaignForm6 from "./components/CampaignForm6";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<CampaignForm />} />
+        <Route path="/campaign1" element={<CampaignForm />} />
         <Route path="/campaign2" element={<CampaignForm2 />} />
         <Route path="/campaign3" element={<CampaignForm3 />} />
         <Route path="/campaign4" element={<CampaignForm4 />} />
         <Route path="/campaign5" element={<CampaignForm5 />} />
+        <Route path="/campaign6" element={<CampaignForm6/>} />
         <Route path="/lead/campaign1" element={<LeadList campaignId="campaign1"/>} />
         <Route path="/lead/campaign2" element={<LeadList campaignId="campaign2"/>} />
         <Route path="/lead/campaign3" element={<LeadList campaignId="campaign3"/>} />
         <Route path="/lead/campaign4" element={<LeadList campaignId="campaign4"/>} />
         <Route path="/lead/campaign5" element={<LeadList campaignId="campaign5"/>} />
+        <Route path="/lead/campaign6" element={<LeadList campaignId="campaign6"/>} />
         <Route path="/thankyou" element={<ThankYou />} />
       </Routes>
     </Router>
