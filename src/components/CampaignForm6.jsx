@@ -10,7 +10,7 @@ const CampaignForm6 = () => {
       "https://kyc.enrichmoney.in/register?referralcode=BR0012&sourcecode=3",
     steps: [
       "Fill your details and submit",
-      "Register in Enrich Money app",
+      "Register in Enrich Money site/app",
       "Complete Account Opening & Add ₹3000+",
       "Trade ₹2500+ amount",
       "Cashback credited within 1-2 days after trade",
