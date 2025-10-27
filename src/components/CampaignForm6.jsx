@@ -7,13 +7,13 @@ const CampaignForm6 = () => {
     reward: "₹250",
     offerText: "🔥 HOT DEAL!",
     redirectUrl:
-      "https://kyc.enrichmoney.in/register?sourcecode=2&referralcode=AB169516",
+      "https://kyc.enrichmoney.in/register?referralcode=BR0012&sourcecode=3",
     steps: [
       "Fill your details and submit",
       "Register in Enrich Money app",
-      "Complete Account Opening & Add ₹5000+",
-      "Trade any amount",
-      "Cashback credited within 24 hours after trade",
+      "Complete Account Opening & Add ₹3000+",
+      "Trade ₹2500+ amount",
+      "Cashback credited within 1-2 days after trade",
     ],
   };
 
