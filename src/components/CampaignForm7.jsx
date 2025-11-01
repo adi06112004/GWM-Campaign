@@ -3,8 +3,8 @@ import React, { useState } from "react";
 const CampaignForm7 = () => {
   const campaign = {
     id: "campaign7",
-    name: "Mudrex ₹300 + ₹130 = ₹430 Offer",
-    reward: "₹300 + ₹130 = ₹430",
+    name: "Mudrex ₹300 + ₹130 Offer",
+    reward: "₹430",
     offerText: "🔥 LIMITED TIME BONUS!",
     redirectUrl: "https://mudrex.go.link/a84Cl",
     steps: [
