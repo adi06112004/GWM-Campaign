@@ -93,7 +93,7 @@ const CampaignForm7 = () => {
 
         {/* Refer Code */}
         <p className="text-center text-sm text-gray-600 mb-8 leading-relaxed">
-          *Apply this Refer Code in “Apply Refer Code” section* <br />
+          *Apply this Refer Code in “Apply Refer Code” section on click three dots* <br />
           <span className="font-semibold text-indigo-600">Refer Code: UE9O7V10</span>
         </p>
 
