@@ -19,12 +19,14 @@ function App() {
         <Route path="/campaign4" element={<CampaignForm4 />} />
         <Route path="/campaign5" element={<CampaignForm5 />} />
         <Route path="/campaign6" element={<CampaignForm6/>} />
+        <Route path="/campaign7" element={<CampaignForm7/>} />
         <Route path="/lead/campaign1" element={<LeadList campaignId="campaign1"/>} />
         <Route path="/lead/campaign2" element={<LeadList campaignId="campaign2"/>} />
         <Route path="/lead/campaign3" element={<LeadList campaignId="campaign3"/>} />
         <Route path="/lead/campaign4" element={<LeadList campaignId="campaign4"/>} />
         <Route path="/lead/campaign5" element={<LeadList campaignId="campaign5"/>} />
         <Route path="/lead/campaign6" element={<LeadList campaignId="campaign6"/>} />
+        <Route path="/lead/campaign7" element={<LeadList campaignId="campaign7"/>} />
         <Route path="/thankyou" element={<ThankYou />} />
       </Routes>
     </Router>
