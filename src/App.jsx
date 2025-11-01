@@ -8,6 +8,7 @@ import CampaignForm4 from "./components/CampaignForm4";
 import CampaignForm5 from "./components/CampaignForm5";
 import ThankYou from "./components/ThankYou";
 import CampaignForm6 from "./components/CampaignForm6";
+import CampaignForm7 from "./components/CampaignForm7";
 
 function App() {
   return (
