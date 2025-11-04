@@ -13,8 +13,7 @@ const CampaignForm7 = () => {
       "Now Deposit ₹2002 And Instantly Recieved ₹300 BTC Coin.",
       "Now Sell BTC Coin & Withdrawal All Amount Instantly Received Credited All Amount.",
       "Done!! You Will Received ₹130 Upi Cashback after 48 Hour.",
-      "🛑Note: After Register If You Not Showing ₹300 BTC Pop-up Then You don't need to complete KYC, it's your old Account.",
-      "🛑 Deposit amount minimum 72 hours hold karna hai warna cashback nahi aayega."
+      "🛑Note: After Register If You Not Showing ₹300 BTC Pop-up Then You don't need to complete KYC, it's your old Account."
     ]
   };
 
