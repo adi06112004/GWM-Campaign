@@ -4,15 +4,16 @@ import { motion, AnimatePresence } from "framer-motion";
 const CampaignForm4 = () => {
   const campaign = {
     id: "campaign4",
-    name: "PAYTM MONEY",
-    reward: "₹150",
+    name: "TIDE BUSINESS",
+    reward: "₹250",
     offerText: "🔥 LIMITED TIME BONUS!",
-    redirectUrl: "https://paytmmoney.page.link/i6V46MVBHZD9WCZD9",
+    redirectUrl: "https://tide.onelink.me/8hEl/raf?deep_link_sub1=EP3340",
     steps: [
-      "Enter your Name, Mobile Number & UPI ID and submit",
-      "Then open account using Aadhaar & PAN",
-      "Wait for Approval",
-      "Get ₹120 in your Bank Account within 24 hours 🎉"
+      "Enter your working UPI ID & Same Number Jisse Aap Tide Me Account Banaoge.",
+      "👉 Download App, Create Account, Click on Referral Code & Must Enter Refer Code for Cashback.",
+      "▪ Start Application, Create Account, Select Any Business except Student ❌.",
+      "▪ Now Must Do Video KYC (10 AM to 7 PM) and Add Rs.50 in Tide Account Same Day.",
+      "Your Cashback Received within 24h"
     ]
   };
 
@@ -56,7 +57,7 @@ const CampaignForm4 = () => {
 
       if (res.ok || data.alreadyExists) {
         setSuccess(true);
-        await new Promise((r) => setTimeout(r, 3000));
+        await new Promise((r) => setTimeout(r, 2000));
         window.location.href = campaign.redirectUrl;
       } else {
         setError(data.error || "Submission failed");
@@ -80,7 +81,7 @@ const CampaignForm4 = () => {
         {/* Logo/Avatar */}
         <div className="flex justify-center">
           <img
-            src="https://play-lh.googleusercontent.com/nXCY9Did341stoQEhCEH5wJW2FBybZYbpiYl2J-eCajYOXZ_XXXHX1ptjATuA0zayg"
+            src="https://play-lh.googleusercontent.com/LBhZhmxTEsYm5PV6onbX98mSootOoh6uCPdRhyMlTEKXJcVMX7nSwEHEhqAiKpNn3Rk"
             alt="Paytm Money"
             className="w-16 h-16 rounded-full border-2 border-yellow-400 shadow-md mb-2"
           />
@@ -97,6 +98,7 @@ const CampaignForm4 = () => {
         <p className="text-3xl font-extrabold text-orange-400 text-center mb-3 animate-pulse">
           Get {campaign.reward}
         </p>
+        <p className="text-center mb-4 font-extrabold text-yellow-400">Refer Code:- EP3340 (Must Enter)</p>
 
         {/* Error Message */}
         {error && (
