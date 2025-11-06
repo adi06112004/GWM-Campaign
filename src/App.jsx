@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<CampaignForm />} />
+        <Route path="/" element={<ThankYou/>} />
         {/* <Route path="/campaign2" element={<CampaignForm2 />} /> */}
         {/* <Route path="/campaign3" element={<CampaignForm3 />} /> */}
         <Route path="/campaign4" element={<CampaignForm4 />} />
