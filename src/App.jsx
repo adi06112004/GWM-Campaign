@@ -15,10 +15,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<CampaignForm />} />
-        <Route path="/campaign2" element={<CampaignForm2 />} />
-        <Route path="/campaign3" element={<CampaignForm3 />} />
+        {/* <Route path="/campaign2" element={<CampaignForm2 />} /> */}
+        {/* <Route path="/campaign3" element={<CampaignForm3 />} /> */}
         <Route path="/campaign4" element={<CampaignForm4 />} />
-        <Route path="/campaign5" element={<CampaignForm5 />} />
+        {/* <Route path="/campaign5" element={<CampaignForm5 />} /> */}
         <Route path="/campaign6" element={<CampaignForm6/>} />
         <Route path="/campaign7" element={<CampaignForm7/>} />
         <Route path="/lead/campaign1" element={<LeadList campaignId="campaign1"/>} />
