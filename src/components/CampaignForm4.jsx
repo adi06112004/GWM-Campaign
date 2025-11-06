@@ -5,7 +5,7 @@ const CampaignForm4 = () => {
   const campaign = {
     id: "campaign4",
     name: "TIDE BUSINESS",
-    reward: "₹350",
+    reward: "₹300",
     offerText: "🔥 LIMITED TIME BONUS!",
     redirectUrl: "https://tide.onelink.me/8hEl/raf?deep_link_sub1=EP3340",
     steps: [
