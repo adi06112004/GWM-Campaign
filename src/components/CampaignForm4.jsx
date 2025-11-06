@@ -12,7 +12,7 @@ const CampaignForm4 = () => {
       "Enter your working UPI ID & Same Number Jisse Aap Tide Me Account Banaoge.",
       "👉 Download App, Create Account, Click on Referral Code & Must Enter Refer Code for Cashback.",
       "▪ Start Application, Create Account, Select Any Business except Student ❌.",
-      "▪ Now Must Do Video KYC (10 AM to 7 PM) and Add Rs.50 in Tide Account Same Day.",
+      "▪ Now Must Do Video KYC (10 AM to 7 PM) and Add Rs.50 in Tide Account.",
       "Your Cashback Received within 24h"
     ]
   };
