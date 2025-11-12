@@ -6,7 +6,7 @@ const CampaignForm5 = () => {
     name: "Coinswitch Dhamaka Offer",
     reward: "₹200 UPI Cashback 💸",
     offerText: "🎉 LIMITED TIME OFFER!",
-    redirectUrl: "https://coinswitch-affiliate.com",
+    redirectUrl: "https://coinswitch.co/pro/signup?code=BcWETMY",
     steps: [
       "Enter Coinswitch Mobile Number and UPI ID and click Submit.",
       "Register using the same number and download the app.",
