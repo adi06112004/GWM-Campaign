@@ -4,7 +4,7 @@ const CampaignForm5 = () => {
   const campaign = {
     id: "campaign5",
     name: "Coinswitch Dhamaka Offer",
-    reward: "₹200 UPI Cashback 💸",
+    reward: "₹250 UPI Cashback 💸",
     offerText: "🎉 LIMITED TIME OFFER!",
     redirectUrl: "https://coinswitch.co/pro/signup?code=BcWETMY",
     steps: [
