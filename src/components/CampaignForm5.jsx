@@ -14,7 +14,7 @@ const CampaignForm5 = () => {
       "Add ₹500 in your account using UPI (Deposit amount can be instantly withdrawn).",
       "Click 'Pro' → 'Select Future' → 'Most Traded' → Select SOL Coin → Leverage 25x → Order Value 100%.",
       "Buy and Sell the same coin 15–20 times (just quick Buy & Sell).",
-      "✅ Done! You will get ₹200 UPI Cashback within 12–48 hours."
+      "✅ Done! You will get ₹250 UPI Cashback within 12–48 hours."
     ]
   };
 
