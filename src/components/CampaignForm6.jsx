@@ -2,22 +2,25 @@ import React, { useState } from "react";
 
 const CampaignForm6 = () => {
   const campaign = {
-    id: "campaign6",
-    name: "Enrich Money ₹250 Cashback",
-    reward: "₹250",
-    offerText: "🔥 HOT DEAL!",
+    id: "campaign-coinswitch",
+    name: "CoinSwitch ₹150 Cashback",
+    reward: "₹150",
+    offerText: "🔥 LIMITED OFFER!",
     redirectUrl:
-      "https://kyc.enrichmoney.in/register?referralcode=BR0012&sourcecode=3",
+      "https://coinswitch.co/in/refer?tag=ZLNr", // replace this
     steps: [
-      "Fill your details and submit",
-      "Register in Enrich Money site/app",
-      "Complete Account Opening & Add ₹3000+",
-      "Trade ₹2500+ amount",
-      "Cashback credited within 1-2 days after trade",
+      "Complete KYC using Aadhaar & PAN",
+      "Deposit ₹100 or more",
+      "Buy any crypto and sell it",
+      "₹150 cashback credited within 24 hours",
     ],
   };
 
-  const [formData, setFormData] = useState({ name: "", mobile: "", upi: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    mobile: "",
+    upi: "",
+  });
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -27,6 +30,7 @@ const CampaignForm6 = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!formData.name || !formData.mobile || !formData.upi) {
       alert("Please fill all fields");
       return;
@@ -41,24 +45,29 @@ const CampaignForm6 = () => {
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...formData, campaignId: campaign.id }),
+          body: JSON.stringify({
+            ...formData,
+            campaignId: campaign.id,
+          }),
         }
       );
+
       const data = await res.json();
 
-      await new Promise((resolve) => setTimeout(resolve, 5000));
+      // Wait 5 sec for tracking
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       if (res.ok || data.alreadyExists) {
         window.location.href = campaign.redirectUrl;
       } else {
         alert(data.error || "Submission failed");
       }
-    } catch {
+    } catch (err) {
       alert("Server error");
     }
 
-    setShowModal(false);
     setLoading(false);
+    setShowModal(false);
   };
 
   return (
@@ -67,7 +76,7 @@ const CampaignForm6 = () => {
       <div className="absolute top-0 right-0 w-72 h-72 bg-green-500 opacity-25 blur-3xl rounded-full animate-pulse"></div>
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-emerald-400 opacity-25 blur-3xl rounded-full animate-pulse"></div>
 
-      {/* Main Card */}
+      {/* Card */}
       <div className="bg-black/60 backdrop-blur-xl border border-green-700/50 max-w-md w-full rounded-3xl shadow-[0_0_40px_rgba(0,255,100,0.25)] p-8 text-white relative transition-transform hover:scale-[1.02]">
         {/* Badge */}
         <div className="text-center mb-4">
@@ -77,22 +86,22 @@ const CampaignForm6 = () => {
         </div>
 
         {/* Title */}
-        <h2 className="text-center text-3xl font-black text-emerald-300 drop-shadow-lg tracking-wide">
+        <h2 className="text-center text-3xl font-black text-emerald-300">
           {campaign.name}
         </h2>
-        <p className="text-center text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 mb-2 drop-shadow-md">
+        <p className="text-center text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 mb-2">
           Get {campaign.reward}
         </p>
         <p className="text-center text-gray-400 text-sm mb-6">
-          Complete in 3 simple steps
+          Complete in 4 simple steps
         </p>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
-          {["name", "mobile", "upi"].map((field, idx) => (
+          {["name", "mobile", "upi"].map((field) => (
             <div
-              key={idx}
-              className="flex items-center border border-gray-600 rounded-xl p-3 bg-gray-800/50 focus-within:border-green-400 transition-all"
+              key={field}
+              className="flex items-center border border-gray-600 rounded-xl p-3 bg-gray-800/50 focus-within:border-green-400 transition"
             >
               <span className="mr-3 text-green-300 text-lg">
                 {field === "name" && "👤"}
@@ -117,11 +126,11 @@ const CampaignForm6 = () => {
             </div>
           ))}
 
-          {/* Submit Button */}
+          {/* Submit */}
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center bg-gradient-to-r from-green-400 via-emerald-500 to-teal-600 p-3 rounded-xl font-bold shadow-lg transform hover:scale-105 hover:rotate-1 transition duration-300 relative"
+            className="w-full flex items-center justify-center bg-gradient-to-r from-green-400 via-emerald-500 to-teal-600 p-3 rounded-xl font-bold shadow-lg transform hover:scale-105 transition"
           >
             {loading ? (
               <span className="flex items-center gap-2">
@@ -129,7 +138,7 @@ const CampaignForm6 = () => {
                 Submitting...
               </span>
             ) : (
-              "✅ Claim Now"
+              "✅ Claim ₹150 Now"
             )}
           </button>
         </form>
@@ -138,30 +147,27 @@ const CampaignForm6 = () => {
         <div className="mt-6 bg-gray-800/50 p-4 rounded-xl border border-green-700 text-sm">
           <p className="font-bold text-green-300 mb-2">📌 How to claim:</p>
           <ol className="list-decimal pl-4 text-gray-300 space-y-1">
-            {campaign.steps.map((s, i) => (
-              <li
-                key={i}
-                className="hover:text-green-400 transition duration-200"
-              >
-                {s}
+            {campaign.steps.map((step, i) => (
+              <li key={i} className="hover:text-green-400">
+                {step}
               </li>
             ))}
           </ol>
           <p className="text-center text-green-400 font-bold mt-3 animate-pulse">
-            💰 Limited Period Offer!
+            💰 Cashback within 24 hours
           </p>
         </div>
       </div>
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 animate-fadeIn">
-          <div className="bg-gray-900/90 border border-green-500 rounded-2xl p-6 text-center shadow-[0_0_25px_rgba(0,255,100,0.3)] scale-95 animate-zoomIn">
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+          <div className="bg-gray-900/90 border border-green-500 rounded-2xl p-6 text-center shadow-[0_0_25px_rgba(0,255,100,0.3)]">
             <h3 className="text-green-300 font-bold text-lg mb-3">
               ⏳ Processing...
             </h3>
             <p className="text-gray-300 text-sm mb-4">
-              Please wait 10-15 seconds. Do not close or refresh.
+              Please wait 10–15 seconds. Do not refresh.
             </p>
             <div className="flex justify-center">
               <span className="w-10 h-10 border-4 border-green-400 border-t-transparent rounded-full animate-spin"></span>
