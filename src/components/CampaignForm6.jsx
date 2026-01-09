@@ -10,7 +10,7 @@ const CampaignForm6 = () => {
       "https://coinswitch.co/in/refer?tag=ZLNr", // replace this
     steps: [
       "Complete KYC using Aadhaar & PAN",
-      "Deposit ₹100 or more",
+      "Deposit ₹100+",
       "Buy any crypto and sell it",
       "₹150 cashback credited within 24 hours",
     ],
