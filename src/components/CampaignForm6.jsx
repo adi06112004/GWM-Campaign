@@ -6,7 +6,7 @@ const CampaignForm6 = () => {
     name: "Indiabulls Trading Offer",
     reward: "₹230",
     offerText: "🔥 LIMITED TIME OFFER",
-    redirectUrl: "https://partnersales10607470.o18.click/c?o=21722579&m=12754&a=692490&sub_aff_id="
+    redirectUrl: "https://partnersales10607470.o18.click/c?o=21722579&m=12754&a=692490&sub_aff_id=",
     steps: [
       "Register on Indiabulls website & verify OTP",
       "Complete KYC using Aadhaar & PAN",
