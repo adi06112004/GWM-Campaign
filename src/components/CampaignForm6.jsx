@@ -2,17 +2,16 @@ import React, { useState } from "react";
 
 const CampaignForm6 = () => {
   const campaign = {
-    id: "campaign-coinswitch",
-    name: "CoinSwitch ₹150 Cashback",
-    reward: "₹150",
-    offerText: "🔥 LIMITED OFFER!",
-    redirectUrl:
-      "https://coinswitch.co/in/refer?tag=ZLNr", // replace this
+    id: "campaign-indiabulls",
+    name: "Indiabulls Trading Offer",
+    reward: "₹230",
+    offerText: "🔥 LIMITED TIME OFFER",
+    redirectUrl: "https://partnersales10607470.o18.click/c?o=21722579&m=12754&a=692490&sub_aff_id="
     steps: [
+      "Register on Indiabulls website & verify OTP",
       "Complete KYC using Aadhaar & PAN",
-      "Deposit ₹100+",
-      "Buy any crypto and sell it",
-      "₹150 cashback credited within 24 hours",
+      "Deposit ₹100+ and buy/sell any stock 3-4 times",
+      "₹230 reward credited within 48 hours",
     ],
   };
 
@@ -21,6 +20,7 @@ const CampaignForm6 = () => {
     mobile: "",
     upi: "",
   });
+
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -54,8 +54,7 @@ const CampaignForm6 = () => {
 
       const data = await res.json();
 
-      // Wait 5 sec for tracking
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
       if (res.ok || data.alreadyExists) {
         window.location.href = campaign.redirectUrl;
@@ -71,28 +70,26 @@ const CampaignForm6 = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-green-900 via-black to-green-800 p-6 relative overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-green-500 opacity-25 blur-3xl rounded-full animate-pulse"></div>
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-emerald-400 opacity-25 blur-3xl rounded-full animate-pulse"></div>
+    <div className="w-full min-h-screen flex items-center justify-center bg-gray-100 p-6">
+      <div className="bg-white max-w-md w-full rounded-3xl shadow-xl p-8">
 
-      {/* Card */}
-      <div className="bg-black/60 backdrop-blur-xl border border-green-700/50 max-w-md w-full rounded-3xl shadow-[0_0_40px_rgba(0,255,100,0.25)] p-8 text-white relative transition-transform hover:scale-[1.02]">
-        {/* Badge */}
+        {/* Offer Badge */}
         <div className="text-center mb-4">
-          <span className="inline-block bg-gradient-to-r from-green-500 to-emerald-400 rounded-full px-5 py-1 font-bold text-xs shadow-md animate-bounce">
+          <span className="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-xs font-semibold">
             {campaign.offerText}
           </span>
         </div>
 
         {/* Title */}
-        <h2 className="text-center text-3xl font-black text-emerald-300">
+        <h2 className="text-center text-2xl font-bold text-gray-800">
           {campaign.name}
         </h2>
-        <p className="text-center text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 mb-2">
+
+        <p className="text-center text-4xl font-extrabold text-blue-600 mt-2">
           Get {campaign.reward}
         </p>
-        <p className="text-center text-gray-400 text-sm mb-6">
+
+        <p className="text-center text-gray-500 text-sm mb-6">
           Complete in 4 simple steps
         </p>
 
@@ -101,13 +98,8 @@ const CampaignForm6 = () => {
           {["name", "mobile", "upi"].map((field) => (
             <div
               key={field}
-              className="flex items-center border border-gray-600 rounded-xl p-3 bg-gray-800/50 focus-within:border-green-400 transition"
+              className="border rounded-xl p-3 bg-gray-50 focus-within:ring-2 focus-within:ring-blue-400 transition"
             >
-              <span className="mr-3 text-green-300 text-lg">
-                {field === "name" && "👤"}
-                {field === "mobile" && "📞"}
-                {field === "upi" && "💳"}
-              </span>
               <input
                 type="text"
                 name={field}
@@ -120,61 +112,67 @@ const CampaignForm6 = () => {
                 }
                 value={formData[field]}
                 onChange={handleChange}
-                className="w-full bg-transparent focus:outline-none text-white placeholder-gray-400"
+                className="w-full bg-transparent focus:outline-none text-gray-700 placeholder-gray-400"
                 required
               />
             </div>
           ))}
 
-          {/* Submit */}
+          {/* Submit Button */}
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center bg-gradient-to-r from-green-400 via-emerald-500 to-teal-600 p-3 rounded-xl font-bold shadow-lg transform hover:scale-105 transition"
+            className="w-full bg-blue-600 text-white p-3 rounded-xl font-semibold hover:bg-blue-700 transition"
           >
-            {loading ? (
-              <span className="flex items-center gap-2">
-                <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                Submitting...
-              </span>
-            ) : (
-              "✅ Claim ₹150 Now"
-            )}
+            {loading ? "Submitting..." : "Claim ₹200 Now"}
           </button>
         </form>
 
-        {/* Steps */}
-        <div className="mt-6 bg-gray-800/50 p-4 rounded-xl border border-green-700 text-sm">
-          <p className="font-bold text-green-300 mb-2">📌 How to claim:</p>
-          <ol className="list-decimal pl-4 text-gray-300 space-y-1">
-            {campaign.steps.map((step, i) => (
-              <li key={i} className="hover:text-green-400">
-                {step}
-              </li>
-            ))}
-          </ol>
-          <p className="text-center text-green-400 font-bold mt-3 animate-pulse">
-            💰 Cashback within 24 hours
-          </p>
+        {/* Steps Section */}
+        <div className="mt-8 space-y-4">
+
+          {campaign.steps.map((step, index) => (
+            <div
+              key={index}
+              className={`flex items-center p-4 rounded-2xl shadow-sm ${
+                index === 0
+                  ? "bg-blue-50"
+                  : index === 1
+                  ? "bg-purple-50"
+                  : index === 2
+                  ? "bg-green-50"
+                  : "bg-yellow-50"
+              }`}
+            >
+              <div
+                className={`w-10 h-10 flex items-center justify-center rounded-xl text-white font-bold mr-4 ${
+                  index === 0
+                    ? "bg-blue-500"
+                    : index === 1
+                    ? "bg-purple-500"
+                    : index === 2
+                    ? "bg-green-500"
+                    : "bg-yellow-500"
+                }`}
+              >
+                {index + 1}
+              </div>
+
+              <p className="text-gray-700 text-sm font-medium">{step}</p>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-          <div className="bg-gray-900/90 border border-green-500 rounded-2xl p-6 text-center shadow-[0_0_25px_rgba(0,255,100,0.3)]">
-            <h3 className="text-green-300 font-bold text-lg mb-3">
-              ⏳ Processing...
-            </h3>
-            <p className="text-gray-300 text-sm mb-4">
-              Please wait 10–15 seconds. Do not refresh.
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
+          <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
+            <h3 className="text-blue-600 font-bold mb-3">Processing...</h3>
+            <p className="text-gray-500 text-sm mb-4">
+              Please wait while we redirect you.
             </p>
-            <div className="flex justify-center">
-              <span className="w-10 h-10 border-4 border-green-400 border-t-transparent rounded-full animate-spin"></span>
-            </div>
-            <div className="mt-3 text-green-400 font-semibold animate-pulse">
-              Tracking your lead...
-            </div>
+            <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
           </div>
         </div>
       )}
