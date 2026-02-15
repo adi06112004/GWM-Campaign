@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const CampaignForm6 = () => {
   const campaign = {
     id: "campaign6",
-    name: "Indiabulls Trading Offer",
+    name: "Indiabulls Demat Offer",
     reward: "₹230",
     offerText: "🔥 LIMITED TIME OFFER",
     redirectUrl: "https://partnersales10607470.o18.click/c?o=21722579&m=12754&a=692490&sub_aff_id=",
@@ -124,7 +124,7 @@ const CampaignForm6 = () => {
             disabled={loading}
             className="w-full bg-blue-600 text-white p-3 rounded-xl font-semibold hover:bg-blue-700 transition"
           >
-            {loading ? "Submitting..." : "Claim ₹200 Now"}
+            {loading ? "Submitting..." : "Claim ₹230 Now"}
           </button>
         </form>
 
