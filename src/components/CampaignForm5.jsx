@@ -11,8 +11,7 @@ const CampaignForm5 = () => {
       "Enter your Name, Mobile Number, and UPI ID and click Submit.",
       "Register using the same mobile number on Anshikaa Trading.",
       "Download the app & complete your full KYC.",
-      "Deposit ₹100 or more using UPI (Fully withdrawable).",
-      "Buy & Sell any coin of any amount (even ₹10–20).",
+      "Deposit ₹100+ & Trade any Amount.",
       "🎉 Done! You will receive ₹150 rewards within 72 hours."
     ]
   };
