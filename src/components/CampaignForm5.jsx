@@ -3,18 +3,17 @@ import React, { useState } from "react";
 const CampaignForm5 = () => {
   const campaign = {
     id: "campaign5",
-    name: "Coinswitch Dhamaka Offer",
-    reward: "₹250 UPI Cashback 💸",
-    offerText: "🎉 LIMITED TIME OFFER!",
-    redirectUrl: "https://coinswitch.co/pro/signup?code=BcWETMY",
+    name: "Anshikaa Trading Offer",
+    reward: "₹150 Rewards 💸",
+    offerText: "🔥 LIMITED TIME OFFER!",
+    redirectUrl: "https://ekycdhanush.ashikagroup.com/r/1444/106",
     steps: [
-      "Enter Coinswitch Mobile Number and UPI ID and click Submit.",
-      "Register using the same number and download the app.",
-      "Login with the same number and complete your KYC.",
-      "Add ₹500 in your account using UPI (Deposit amount can be instantly withdrawn).",
-      "Click 'Pro' → 'Select Future' → 'Most Traded' → Select SOL Coin → Leverage 25x → Order Value 100%.",
-      "Buy and Sell the same coin 15–20 times (just quick Buy & Sell).",
-      "✅ Done! You will get ₹250 UPI Cashback within 12–48 hours."
+      "Enter your Name, Mobile Number, and UPI ID and click Submit.",
+      "Register using the same mobile number on Anshikaa Trading.",
+      "Download the app & complete your full KYC.",
+      "Deposit ₹100 or more using UPI (Fully withdrawable).",
+      "Buy & Sell any coin of any amount (even ₹10–20).",
+      "🎉 Done! You will receive ₹150 rewards within 72 hours."
     ]
   };
 
@@ -37,11 +36,15 @@ const CampaignForm5 = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("https://gwm-campaign-backend.onrender.com/api/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, campaignId: campaign.id }),
-      });
+      const res = await fetch(
+        "https://gwm-campaign-backend.onrender.com/api/submit",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, campaignId: campaign.id })
+        }
+      );
+
       const data = await res.json();
 
       await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -61,27 +64,33 @@ const CampaignForm5 = () => {
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-tr from-gray-100 via-white to-gray-200 p-6 relative overflow-hidden">
-      {/* Soft light blobs */}
+      {/* Soft blobs */}
       <div className="absolute top-0 left-0 w-60 h-60 bg-yellow-300 rounded-full opacity-30 blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-60 h-60 bg-pink-300 rounded-full opacity-30 blur-3xl animate-pulse"></div>
 
       <div className="bg-white/90 backdrop-blur-md border border-gray-300 max-w-md w-full rounded-3xl shadow-2xl p-8 text-gray-800 relative overflow-hidden">
+        
+        {/* Offer badge */}
         <div className="text-center mb-4">
           <span className="inline-block bg-gradient-to-r from-yellow-400 to-pink-400 rounded-full px-4 py-1 font-bold text-xs shadow-md animate-pulse text-gray-900">
             {campaign.offerText}
           </span>
         </div>
 
+        {/* Title */}
         <h2 className="text-center text-2xl font-extrabold text-gray-900 drop-shadow-sm">
           {campaign.name}
         </h2>
+
         <p className="text-center text-4xl font-extrabold text-pink-500 mb-2">
           Get {campaign.reward}
         </p>
+
         <p className="text-center text-gray-600 text-sm mb-6">
           Complete all steps to grab your reward
         </p>
 
+        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           {["name", "mobile", "upi"].map((field, idx) => (
             <div
@@ -93,6 +102,7 @@ const CampaignForm5 = () => {
                 {field === "mobile" && "📞"}
                 {field === "upi" && "💳"}
               </span>
+
               <input
                 type="text"
                 name={field}
@@ -100,7 +110,7 @@ const CampaignForm5 = () => {
                   field === "name"
                     ? "Your Name"
                     : field === "mobile"
-                    ? "Coinswitch Mobile Number"
+                    ? "Registered Mobile Number"
                     : "UPI ID"
                 }
                 value={formData[field]}
@@ -120,19 +130,23 @@ const CampaignForm5 = () => {
           </button>
         </form>
 
+        {/* Steps */}
         <div className="mt-5 bg-gray-50 p-4 rounded-xl border border-gray-200 text-sm">
           <p className="font-bold text-pink-600 mb-2">📋 Steps to Claim:</p>
+
           <ol className="list-decimal pl-4 text-gray-700 space-y-1">
             {campaign.steps.map((s, i) => (
               <li key={i}>{s}</li>
             ))}
           </ol>
+
           <p className="text-center text-yellow-600 font-bold mt-2 animate-bounce">
             ⚡ Hurry! Limited Time Offer
           </p>
         </div>
       </div>
 
+      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
           <div className="bg-white border border-yellow-400 rounded-2xl p-6 text-center shadow-2xl">
