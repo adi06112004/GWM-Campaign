@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const CampaignForm = () => {
   const campaign = {
     id: "campaign1",
-    name: "DHANUSH",
+    name: "DHANUSH ",
     reward: "₹70",
     offerText: "LIMITED TIME BONUS",
     redirectUrl: "https://ekycdhanush.ashikagroup.com/r/1444/3",
