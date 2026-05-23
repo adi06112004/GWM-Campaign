@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const CampaignForm = () => {
   const campaign = {
-    id: "campaign_dhanush",
+    id: "campaign1",
     name: "DHANUSH",
     reward: "₹70",
     offerText: "LIMITED TIME BONUS",
